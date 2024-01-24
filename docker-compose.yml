@@ -1,0 +1,23 @@
+version: "3.1"
+
+services:
+  stream:
+    build:
+      context: .
+      dockerfile: ./app.Dockerfile
+    container_name: stream
+    restart: always
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      - APP_ENV
+      - APP_HOST
+      - APP_PORT
+      - JWT_HOST
+    networks:
+      app-net: {}
+
+networks:
+  app-net:
+    external: true
+    name: "gramwannabe-net"

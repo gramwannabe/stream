@@ -1,0 +1,6 @@
+@host=http://localhost:4300
+
+GET {{host}}/healthcheck
+
+###
+GET {{host}}/image/4eba1e16-2bfc-4874-8f16-a5b120698b9b/274268eb-3f99-4cb3-956d-b52949d1a944-20582460_1908385709410162_142670335307677696_a.jpg
