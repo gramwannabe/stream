@@ -14,6 +14,11 @@ services:
       - APP_HOST
       - APP_PORT
       - JWT_HOST
+      - MINIO_HOST
+      - MINIO_PORT
+      - MINIO_USE_SSL
+      - MINIO_ACCESS_KEY
+      - MINIO_SECRET_KEY
     networks:
       app-net: {}
 

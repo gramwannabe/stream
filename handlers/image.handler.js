@@ -13,7 +13,7 @@ const minioClient = new Minio.Client({
 export async function image(req, res) {
 
     try {
-    
+
         const { filename, userId } = req.params
         const bucketName = userId
 
@@ -23,7 +23,7 @@ export async function image(req, res) {
         const stream = await minioClient.getObject(bucketName, filename)
         res.raw.writeHead(200, { 'Content-Type': contentType });
         stream.pipe(res.raw);
-        
+
     } catch (error) {
         console.error(error)
         return res.code(error.code ? error.code : 500).send({ status_code: error.code ? error.code : 500, message: error.message ? error.message : 'Internal error!' });
